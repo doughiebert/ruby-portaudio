@@ -428,7 +428,7 @@ module PortAudio
       C.Pa_GetStreamCpuLoad(@stream)
     end
     
-    def read
+    def read(buffer)
       C.Pa_ReadStream(@stream, buffer.to_ptr, buffer.frames)
     end
     
