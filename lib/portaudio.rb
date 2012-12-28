@@ -429,7 +429,7 @@ module PortAudio
     end
     
     def read
-      raise NotImplementedError, "Stream#read is not implemented" # TODO ;)
+      C.Pa_ReadStream(@stream, buffer.to_ptr, buffer.frames)
     end
     
     def write(buffer)
